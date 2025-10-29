@@ -1,22 +1,23 @@
----
-import Layout from '../layouts/Layout.astro';
----
-
-<Layout title="UHO-Minecraft">
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UHO-Minecraft | Offizielle Minecraft Projekt Website</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
-    main {
+    body {
+      margin: 0;
+      padding: 0;
       background: radial-gradient(circle at top, #0d0d0d, #000);
       color: #00e6ff;
       font-family: 'Orbitron', sans-serif;
       text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
+    }
+
+    header {
+      padding: 100px 20px 50px;
     }
 
     h1 {
@@ -28,7 +29,10 @@ import Layout from '../layouts/Layout.astro';
     p {
       font-size: 1.2rem;
       color: #b3ffff;
-      max-width: 600px;
+    }
+
+    .stats {
+      margin-top: 40px;
     }
 
     .player-count {
@@ -57,26 +61,30 @@ import Layout from '../layouts/Layout.astro';
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 100px;
       font-size: 0.9rem;
       color: #666;
+      padding-bottom: 30px;
     }
   </style>
-
-  <main>
+</head>
+<body>
+  <header>
     <h1>UHO-Minecraft</h1>
-    <p>Willkommen auf dem offiziellen Server – Tritt unserer Community bei!</p>
+    <p>Willkommen auf der offiziellen UHO-Clan Minecraft Server Seite – Tritt unserer Community bei!</p>
 
-    <div class="player-count" id="playerCount">Spieler: Lade...</div>
+    <div class="stats">
+      <div class="player-count" id="playerCount">Spieler: Lade...</div>
+    </div>
 
-    <a href="https://discord.gg/DEIN-DISCORD-LINK" target="_blank" class="discord-btn">
+    <a href="https://discord.gg/Wwr5fYQBHm" target="_blank" class="discord-btn">
       🔗 Discord beitreten
     </a>
+  </header>
 
-    <footer>
-      © 2025 UHO-Minecraft.net | Alle Rechte vorbehalten
-    </footer>
-  </main>
+  <footer>
+    © 2025 UHO-Minecraft.net | Alle Rechte vorbehalten
+  </footer>
 
   <script>
     async function updatePlayerCount() {
@@ -95,6 +103,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     updatePlayerCount();
-    setInterval(updatePlayerCount, 60000);
+    setInterval(updatePlayerCount, 60000); // alle 60 Sekunden aktualisieren
   </script>
-</Layout>
+</body>
+</html>
